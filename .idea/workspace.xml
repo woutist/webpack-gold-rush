@@ -13,8 +13,6 @@
     <list default="true" id="92b0880c-f081-4b7a-8e58-e50e07176017" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prod/js-prod/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/prod/js-prod/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prod/js-prod/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/prod/js-prod/bundle.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ih530wWEBrAxpbAZFjFpinPaMC" />
@@ -68,7 +71,8 @@
       <updated>1602346779897</updated>
       <workItem from="1602346780931" duration="8024000" />
       <workItem from="1602365261881" duration="404000" />
-      <workItem from="1602365679328" duration="905000" />
+      <workItem from="1602365679328" duration="1087000" />
+      <workItem from="1602366780591" duration="73000" />
     </task>
     <servers />
   </component>
@@ -88,13 +92,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602366551235">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602366843828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602366551235" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602365643890">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602366843828" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602366590945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602365643890" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602366590945" />
   </component>
 </project>
