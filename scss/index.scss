@@ -1,0 +1,127 @@
+/* RESET */
+
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas,
+caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset,
+figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, hr, header, hgroup,
+html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav,
+object, ol, p, pre, q, samp, section, small, span, strong, sub, summary,
+sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, ul, var, video, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+mark {
+    background-color: transparent;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+caption, th {
+    text-align: left;
+}
+
+q:after, q:before {
+    content: "";
+}
+
+a {
+    color: inherit;
+}
+
+body,html {
+    height:100%;
+    width: 100%;
+}
+
+/* END RESET */
+
+html {
+    display: table;
+    table-layout: fixed;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+
+    canvas {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 900ms ease-in-out;
+    }
+
+    &.during {
+        &:after {
+            content: "Gold Rush \A Loading...";
+            white-space: pre;
+            color: white;
+            font-size: 30px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotateY(0);
+            -webkit-animation: anim-logo-preloader 2.4s ease-in-out;
+            animation: anim-logo-preloader 2.4s ease-in-out;
+        }
+        &:before {
+            content: "semDesign";
+            color: white;
+            margin-top: 60px;
+            font-size: 16px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotateY(0);
+            -webkit-animation: anim-logo-preloader 2.4s ease-in-out;
+            animation: anim-logo-preloader 2.4s ease-in-out;
+        }
+    }
+
+    &.ready {
+        &:after,
+        &:before {
+            display: none;
+        }
+        canvas {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}
+
+@keyframes anim-logo-preloader {
+    0%   {transform: translate(-50%, -50%) rotateY(180deg); color: black;}
+    30%   {transform: translate(-50%, -50%) rotateY(180deg);}
+    60%   {color: black;}
+    100% {transform: translate(-50%, -50%) rotateY(0deg); color: white;}
+}
+
+#game-content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    canvas {
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
