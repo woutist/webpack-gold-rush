@@ -72,7 +72,7 @@
       <workItem from="1602346780931" duration="8024000" />
       <workItem from="1602365261881" duration="404000" />
       <workItem from="1602365679328" duration="1087000" />
-      <workItem from="1602366780591" duration="73000" />
+      <workItem from="1602366780591" duration="400000" />
     </task>
     <servers />
   </component>
@@ -92,10 +92,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602366843828">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602366914544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602366843828" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602366914544" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602367013000">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602367013000" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602366590945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
