@@ -2,6 +2,8 @@ import '../scss/index.scss';
 import {setCookies, removeCookies, getCookies} from './cookies';
 import {detectionDevice, detectionWEBGL, isEven, inArrayObject, inArray, isExists, removeA, randomBetween, randomArray, triggerKeyboardEvent} from './functions';
 
+console.log("test1");
+
 // for IE11
 Number.isInteger = Number.isInteger || function(value) {
     return typeof value === "number" &&
