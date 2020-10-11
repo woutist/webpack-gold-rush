@@ -11,7 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92b0880c-f081-4b7a-8e58-e50e07176017" name="Default Changelist" comment="Test">
+      <change afterPath="$PROJECT_DIR$/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-gold-rush/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android-gold-rush/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prod" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,14 +52,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\webpack-gold-rush\prod" />
-      <recent name="C:\xampp\htdocs\webpack-gold-rush" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\webpack-gold-rush" />
       <recent name="C:\xampp\htdocs\webpack-gold-rush\prod" />
       <recent name="C:\xampp\htdocs\webpack-gold-rush\prod\js-prod" />
       <recent name="C:\xampp\htdocs\webpack-gold-rush\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\webpack-gold-rush\prod" />
       <recent name="C:\xampp\htdocs\webpack-gold-rush" />
     </key>
   </component>
@@ -71,7 +74,7 @@
       <workItem from="1602346780931" duration="8024000" />
       <workItem from="1602365261881" duration="404000" />
       <workItem from="1602365679328" duration="1087000" />
-      <workItem from="1602366780591" duration="779000" />
+      <workItem from="1602366780591" duration="4851000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1602367255487</created>
@@ -107,6 +110,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602366914544" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602436283109">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602436283109" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602367259524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -115,5 +122,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602366590945" />
+    <state x="667" y="119" width="648" height="801" key="find.popup" timestamp="1602439172184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="119" width="648" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602439172184" />
   </component>
 </project>

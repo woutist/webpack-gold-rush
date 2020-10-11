@@ -2,7 +2,7 @@ import '../scss/index.scss';
 import {setCookies, removeCookies, getCookies} from './cookies';
 import {detectionDevice, detectionWEBGL, isEven, inArrayObject, inArray, isExists, removeA, randomBetween, randomArray, triggerKeyboardEvent} from './functions';
 
-console.log("test6");
+console.log("test7");
 
 // for IE11
 Number.isInteger = Number.isInteger || function(value) {
