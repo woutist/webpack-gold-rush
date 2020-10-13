@@ -2,8 +2,6 @@ import '../scss/index.scss';
 import {setCookies, removeCookies, getCookies} from './cookies';
 import {detectionDevice, detectionWEBGL, isEven, inArrayObject, inArray, isExists, removeA, randomBetween, randomArray, triggerKeyboardEvent} from './functions';
 
-console.log("test7");
-
 // for IE11
 Number.isInteger = Number.isInteger || function(value) {
     return typeof value === "number" &&
@@ -251,7 +249,6 @@ const preload = () => {
     game.load.image('tile-size-black', 'images/tile-size-black.png');
     game.load.image('the-end', 'images/the-end.png');
 
-
     game.load.spritesheet('buttonsWindowMenu', 'images/buttons.png', 112, 48);
 
     game.load.spritesheet('buttonsIcons', 'images/icons.png', 48, 48);
@@ -276,6 +273,8 @@ const preload = () => {
     game.load.image('door-horizontal', 'images/door-horizontal.png');
     game.load.image('lock', 'images/lock1.png');
 
+    game.load.image('sentence1', 'images/sentence1.png');
+    game.load.image('sentence2', 'images/sentence2.png');
     game.load.image('cactus', 'images/cactus2.png');
     game.load.image('grassLr', 'images/grass_lr.png');
     game.load.spritesheet('cactus-animate', 'images/cactus-animate.png',61,94); //32,32
@@ -590,16 +589,23 @@ const toolsGame={
                 if(isExists(this.obj)) this.obj.stop();
             }
         },
-        nextLevel: function (volume) { // toolsGame.audio.footStep();
-            if(!this.nL) {
-                const nextLevel = game.add.audio('next-level');
-                nextLevel.play('',false,volume ? volume : 0.2);
-                this.nL= true;
-                nextLevel.onStop.addOnce(function() {
-                    this.nL=false;
-                }, this);
+        nextLevelNew: {
+            play:function (volume) {
+                if(!this.nL) {
+                    if(isExists(this.obj)) this.obj.destroy();
+                    this.obj = game.add.audio('next-level');
+                    this.obj.play('', false, volume ? volume : 0.2);
+                    this.nL= true;
+                    this.obj.onStop.addOnce(function() {
+                        this.nL=false;
+                    }, this);
+                }
+            },
+            stop:function () {
+                if(isExists(this.obj)) this.obj.stop();
             }
-        },
+
+        }
 
     },
     preloader: {
@@ -810,6 +816,7 @@ const toolsGame={
                     toolsGame.buttons.play.hide();
                     toolsGame.buttons.quit.hide();
                     toolsGame.buttons.mute.hide();
+                    toolsGame.animationImage.sentence1.hide();
                 }
 
 
@@ -867,10 +874,104 @@ const toolsGame={
                     toolsGame.buttons.play.show();
                     toolsGame.buttons.quit.show();
                     toolsGame.buttons.mute.show(getCookies('mute')?10:9);
+                    toolsGame.animationImage.sentence1.show();
                 }
                 toolsGame.windows.boxTopMenu.f=false;
                 //}
 
+            }
+        }
+    },
+    animationImage: { //toolsGame.animationImage.sentence1.show();
+        sentence1:{
+            fFirstLoad: false,
+            show:function(){
+                if(isExists(this.obj)) this.obj.destroy();
+                this.obj = game.add.image(7*tileSize, 9*tileSize, 'sentence1');
+                this.obj.alpha = 0;
+                this.obj.fixedToCamera = true;
+
+                if(isExists(this.obj2)) this.obj2.destroy();
+                this.obj2 = game.add.image(28.5*tileSize, 15*tileSize, 'sentence2');
+                this.obj2.alpha = 0;
+                this.obj2.fixedToCamera = true;
+
+                if(isExists(this.obj3)) this.obj3.destroy();
+                this.obj3 = game.add.image(32*tileSize, 16.5*tileSize, 'sentence2');
+                this.obj3.alpha = 0;
+                this.obj3.fixedToCamera = true;
+                this.obj3.scale.x = 0.7;
+                this.obj3.scale.y = 0.7;
+
+                if(isExists(this.obj4)) this.obj4.destroy();
+                this.obj4 = game.add.image(34.6*tileSize, 16*tileSize, 'sentence2');
+                this.obj4.alpha = 0;
+                this.obj4.fixedToCamera = true;
+                this.obj4.scale.x = 0.45;
+                this.obj4.scale.y = 0.45;
+
+
+                let timeShow = 1000;
+                if(!this.fFirstLoad) {
+                    timeShow = 6900;
+                    this.fFirstLoad = true;
+                }
+
+                this.t1 = game.time.events.add(timeShow, function(){
+                    game.add.tween(this.obj4).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                    toolsGame.audio.shoot(.1);
+                    this.t2 = game.time.events.add(300, function(){
+                        game.add.tween(this.obj3).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                        toolsGame.audio.shoot(.1);
+                        this.t3 = game.time.events.add(300, function(){
+                            game.add.tween(this.obj2).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                            toolsGame.audio.shoot(.1);
+                            this.t4 = game.time.events.add(300, function(){
+                                game.add.tween(this.obj).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                                toolsGame.audio.shoot(.1);
+                                toolsGame.audio.nextLevelNew.play();
+                            }, this);
+                        }, this);
+                    }, this);
+                }, this);
+
+
+                // setTimeout(function (that){
+                //     game.add.tween(that.obj4).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                //     toolsGame.audio.footStep();
+                //     setTimeout(function (that){
+                //         game.add.tween(that.obj3).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                //         toolsGame.audio.footStep();
+                //         setTimeout(function (that){
+                //             game.add.tween(that.obj2).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                //             toolsGame.audio.footStep();
+                //             setTimeout(function (that){
+                //                 game.add.tween(that.obj).to({alpha: 1}, 600, Phaser.Easing.Linear.None, true);
+                //                 toolsGame.audio.footStep();
+                //                 toolsGame.audio.nextLevel();
+                //             },600,that);
+                //         },600,that);
+                //     },600,that);
+                // },timeShow, this);
+            },
+            hide:function(){
+                if(isExists(this.obj)) {
+                    this.obj.destroy();
+                }
+                if(isExists(this.obj2)) {
+                    this.obj2.destroy();
+                }
+                if(isExists(this.obj3)) {
+                    this.obj3.destroy();
+                }
+                if(isExists(this.obj4)) {
+                    this.obj4.destroy();
+                }
+                game.time.events.remove(this.t1);
+                game.time.events.remove(this.t2);
+                game.time.events.remove(this.t3);
+                game.time.events.remove(this.t4);
+                toolsGame.audio.nextLevelNew.stop();
             }
         }
     },
@@ -973,6 +1074,7 @@ const toolsGame={
                     toolsGame.buttons.play.hide();
                     toolsGame.buttons.quit.hide();
                     toolsGame.buttons.mute.hide();
+                    toolsGame.animationImage.sentence1.hide();
                 }, this,6,6);
                 this.obj.alpha = buttonsOpacity;
                 this.obj.fixedToCamera = true;
@@ -1185,8 +1287,8 @@ const toolsGame={
                         if(detectionDevice()){
                             if(typeof navigator.app === "object") { // cordova
                                 navigator.app.exitApp();
-                            } else if(typeof window.awebapp === "object") { // awebapp
-                                window.awebapp.closeApp();
+                            } else if(typeof window.jsToJava === "object") { // jsToJava
+                                window.jsToJava.closeApp();
                             }
                         } else {
                             //alert('This option doesn\'t work in the browser');
@@ -1225,6 +1327,7 @@ const toolsGame={
                         toolsGame.buttons.play.show();
                         toolsGame.buttons.quit.show();
                         toolsGame.buttons.mute.show(getCookies('mute')?10:9);
+                        toolsGame.animationImage.sentence1.show();
                     }
                 }, this,8,8);
                 this.obj.alpha = buttonsOpacity;
@@ -3694,6 +3797,7 @@ const startGame = (type,lastMap,percentLevel) => {
     toolsGame.buttons.play.hide();
     toolsGame.buttons.quit.hide();
     toolsGame.buttons.mute.hide();
+    toolsGame.animationImage.sentence1.hide();
 
 };
 
@@ -3715,9 +3819,10 @@ const create = () => {
     toolsGame.buttons.play.show();
     toolsGame.buttons.quit.show();
     toolsGame.buttons.mute.show(getCookies('mute')?10:9);
+    toolsGame.animationImage.sentence1.show();
 
     const webGL = detectionWEBGL()?'GL':'CA';
-    toolsGame.text.show(false,game.width-180,game.height-25,.9,'semDesign Game (' + (detectionDevice() ? 'Android' : 'Browser') + ')'+' '+webGL, '400 12px Arial' ,'#000000',true,'logoText');
+    toolsGame.text.show(false,game.width-180,game.height-25,.9,'semDesign Game (' + (detectionDevice() ? detectionDevice() : 'Browser') + ')'+' '+webGL, '400 12px Arial' ,'#000000',true,'logoText');
 
     toolsGame.buttons.openBoxMenu.show();
 
@@ -3757,11 +3862,11 @@ const create = () => {
                 //     window.admob.interstitial.show();
                 // }
 
-                if(typeof window.awebapp === "object" && window.navigator.onLine) {
+                if(detectionDevice() && window.navigator.onLine) {
                     game.time.events.add(900, function(){
                         toolsGame.windows.boxMenu.show();
                     },this);
-                    window.awebapp.showInterstitial();
+                    window.jsToJava.showInterstitial();
                 }
 
             } else {

@@ -1,8 +1,8 @@
-var awebapp = {}
+var jsToJava = {}
 
 //close app
-awebapp.closeApp = function (){
-    if(!awebapp.ispro){
+jsToJava.closeApp = function (){
+    if(!jsToJava.ispro){
         try{
             Android.closeApp();
         }catch(e){
@@ -14,8 +14,8 @@ awebapp.closeApp = function (){
 }
 
 //Show banner ad
-awebapp.showBanner = function (){
-    if(!awebapp.ispro){
+jsToJava.showBanner = function (){
+    if(!jsToJava.ispro){
         try{
             Android.showAndroidBanner()
         }catch(e){
@@ -27,7 +27,7 @@ awebapp.showBanner = function (){
 }
 
 //Hide banner ad
-awebapp.hideBanner = function (){
+jsToJava.hideBanner = function (){
 	try{
 		Android.hideAndroidBanner()
 	}catch(e){
@@ -36,8 +36,8 @@ awebapp.hideBanner = function (){
 }
 
 //Show interstitial ad
-awebapp.showInterstitial = function (){
-    if(!awebapp.ispro){
+jsToJava.showInterstitial = function (){
+    if(!jsToJava.ispro){
         try{
             Android.showAd()
         }catch(e){
@@ -48,8 +48,8 @@ awebapp.showInterstitial = function (){
     }
 }
 
-awebapp.showRewardedAd = function(){
-    if(!awebapp.ispro){
+jsToJava.showRewardedAd = function(){
+    if(!jsToJava.ispro){
         try{
             Android.showRewardedAd()
         }catch(e){
@@ -61,13 +61,13 @@ awebapp.showRewardedAd = function(){
 }
 
 //User got reward from rewarded ad
-awebapp.rewarded = function(){
+jsToJava.rewarded = function(){
     //Modify this as you need
     document.getElementById("currentrewards").innerHTML = "Got ad Reward!"
 }
 
 //Landscape screen
-awebapp.landscape = function (){
+jsToJava.landscape = function (){
 	try{
 		Android.landscape()
 	}catch(e){
@@ -76,7 +76,7 @@ awebapp.landscape = function (){
 }
 
 //Portrait screen
-awebapp.portrait = function (){
+jsToJava.portrait = function (){
 	try{
 		Android.portrait()
 	}catch(e){
@@ -85,7 +85,7 @@ awebapp.portrait = function (){
 }
 
 //Show toast alert
-awebapp.alert = function(txt){
+jsToJava.alert = function(txt){
     try{
         Android.showAlert(txt)
     }catch(e){
@@ -94,7 +94,7 @@ awebapp.alert = function(txt){
 }
 
 //Rate this app
-awebapp.rateThisApp = function(){
+jsToJava.rateThisApp = function(){
     try{
         Android.rateThisApp()
     }catch(e){
@@ -103,7 +103,7 @@ awebapp.rateThisApp = function(){
 }
 
 //Share a text
-awebapp.shareText = function(txt, title){
+jsToJava.shareText = function(txt, title){
     try{
         Android.shareText(txt, title)
     }catch(e){
@@ -112,7 +112,7 @@ awebapp.shareText = function(txt, title){
 }
 
 //Share this app
-awebapp.shareThisApp = function(txt, title){
+jsToJava.shareThisApp = function(txt, title){
     try{
         Android.shareThisApp(txt, title)
     }catch(e){
@@ -121,7 +121,7 @@ awebapp.shareThisApp = function(txt, title){
 }
 
 //Purchase Remove Ads feature
-awebapp.removeAds = function(){
+jsToJava.removeAds = function(){
     try{
         Android.removeAds()
     }catch(e){
@@ -130,12 +130,12 @@ awebapp.removeAds = function(){
 }
 
 //Determine the app is it pro without ads or not
-awebapp.ispro = false
-awebapp.itspro = function(n){
+jsToJava.ispro = false
+jsToJava.itspro = function(n){
     if(n == 1){
-        awebapp.hideBanner()
-        awebapp.ispro = true
+        jsToJava.hideBanner()
+        jsToJava.ispro = true
     }else{
-        awebapp.ispro = false
+        jsToJava.ispro = false
     }
 }

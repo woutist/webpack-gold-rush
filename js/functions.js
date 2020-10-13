@@ -1,8 +1,11 @@
 export const detectionDevice = () => {
-    if (typeof cordova === "object") {
-        return (window.cordova.platformId === "android") ? true : false;
-    } else if(typeof window.awebapp === "object") {
-        return true;
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    } else if (/android/i.test(userAgent)) {
+        return "Android";
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
     } else {
         return false;
     }
